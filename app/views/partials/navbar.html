@@ -1,8 +1,9 @@
 <header ng-controller="NavbarCtrl" class="menu">
-  <a class="menu" href="/" ng-if="Auth.isLoggedIn()"><i class="glyphicon glyphicon-bullhorn"></i> Chat</a></li>
-  <a class="menu" href="/login" ng-if="!Auth.isLoggedIn()"> <i class="glyphicon glyphicon-log-in"></i> Login</a>
-  <a class="menu" href="/signup" ng-if="!Auth.isLoggedIn()"> <i class="glyphicon glyphicon-asterisk"></i> Sign up</a>
-  <a class="menu" href="/settings" ng-if="Auth.isLoggedIn()"> <i class="glyphicon glyphicon-wrench"></i> Settings</a>
-  <a class="menu" href="" ng-click="logout()" ng-if="Auth.isLoggedIn()">  <i class="glyphicon glyphicon-log-out"></i> Logout</a>
-  <a class="logo" href="/about"> <i class="glyphicon glyphicon-pushpin"></i></a>
+    <a class="menu" href="/" ng-if="Auth.isLoggedIn()"><i class="glyphicon glyphicon-bullhorn"></i> Chat</a></li>
+    <a class="menu" href="/login" ng-if="!Auth.isLoggedIn()"> <i class="glyphicon glyphicon-log-in"></i> Login</a>
+    <a class="menu" href="/signup" ng-if="!Auth.isLoggedIn()"> <i class="glyphicon glyphicon-asterisk"></i> Sign up</a>
+    <a class="menu" href="/settings" ng-if="Auth.isLoggedIn()"> <i class="glyphicon glyphicon-wrench"></i> Settings</a>
+    <a class="menu" href="" ng-click="logout()" ng-if="Auth.isLoggedIn()"> <i class="glyphicon glyphicon-log-out"></i>
+        Logout</a>
+    <a class="logo" href="/about"> <i class="glyphicon glyphicon-pushpin"></i></a>
 </header>
