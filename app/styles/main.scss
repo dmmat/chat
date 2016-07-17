@@ -18,3 +18,330 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   color: #000;
   padding: 0.2em 0;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 90%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  padding-bottom: 6rem;
+  font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  background: #eaeaea url('bg.png');
+  color: #4d4d4d;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+/*******************************************************************
+LAYOUT
+*******************************************************************/
+
+.chat-app {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 50px 0 40px 0;
+  border: 1px solid #ccc;
+  position: relative;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
+  0 25px 50px 0 rgba(0, 0, 0, 0.15);
+  @include clearfix();
+
+  h1 {
+    position: absolute;
+    top: -120px;
+    width: 100%;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    color: #b3b3b3;
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+  }
+
+  .chat {
+    width: 70%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .chat.open {
+    width: 100%;
+  }
+
+  .main {
+    position: relative;
+    overflow: hidden;
+  }
+
+  section, footer, header {
+    padding: 15px;
+  }
+
+  header {
+    background: #FF6E6E;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  section {
+    height: 65vh;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    ul {
+      padding: 0;
+      margin: 0 0 30px 25px;
+      list-style: none;
+    }
+    li {
+      padding: 15px 0 15px;
+      border-bottom: 1px solid #eee;
+      @include clearfix();
+    }
+    .message {
+      float: left;
+      width: 75%;
+    }
+    .author {
+      font-weight: bold;
+      margin-bottom: 5px;
+      float: left;
+    }
+    .date {
+      float: left;
+      margin-left: 10px;
+      font-size: x-small;
+    }
+    .body {
+      clear: both;
+      word-break: break-all;
+    }
+  }
+
+  footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  aside {
+    width: 30%;
+    border-left: 1px solid #f5d6d6;
+    box-shadow: inset 4px 1px 0px rgba(0, 0, 0, 0.04);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    ul {
+      padding: 0;
+      margin: 15px 0 30px 25px;
+      list-style: none;
+      float: left;
+    }
+    li {
+      padding: 0 0 15px;
+      @include clearfix();
+    }
+
+  }
+  aside.close {
+    right: -30%;
+  }
+  .author-profile {
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+
+  .name {
+    float: left;
+    max-width: 50%;
+  }
+
+  .me {
+    color: #FF6E6E;
+  }
+}
+
+header > a.menu {
+  position: relative;
+  display: inline-block;
+  background: #4A4A4A;
+  color: #FFF;
+  padding: 5px 10px;
+  margin: 2px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.925em;
+  transition: all .3s ease-in-out;
+  /* border: 1px solid #000000; */
+  cursor: pointer;
+  outline: 0;
+  white-space: nowrap;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.4);
+}
+
+header > a.menu:hover {
+  background: #737373;
+  color: #FFFFFF;
+  text-decoration: none;
+
+}
+
+input[type=submit] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.new-message {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  line-height: 1.4em;
+  border: 0;
+  outline: none;
+  color: inherit;
+  padding: 6px;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.send-message {
+  line-height: 1.4em;
+  padding: 6px;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.message-form {
+
+}
+
+.page-container {
+  width: 100%;
+  padding: 15px;
+}
+
+a.logo {
+  display: flex;
+  float: right;
+  width: 128px;
+  color: white;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+  font-size: large;
+  font-weight: 800;
+
+}
+
+a.logo:before {
+  content: 'KHNU-chat';
+  padding-top: 16px;
+
+}
+
+a.logo:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.user-show {
+  position: absolute;
+  right: 0;
+  margin: 5px;
+}
+
+.send {
+  float: right;
+  margin: 10px 0;
+  padding: 5px 30px;
+  color: white;
+  background-color: #FD6D6D;
+}
+
+.send:hover {
+  color: #330033;
+}
+
+.copyright {
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+}
+
+@media (max-width: 500px) {
+  .chat-app .main {
+    position: relative;
+    overflow: visible;
+    height: 90vh;
+  }
+  .chat-app {
+    margin: 0;
+  }
+  aside, .chat-app .chat {
+    height: 70vh;
+  }
+
+  .chat section {
+    height: 70vh;
+  }
+  body {
+    width: 100%;
+  }
+  footer {
+    position: absolute;
+  }
+}

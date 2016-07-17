@@ -1,0 +1,45 @@
+<section class="chat-app">
+    <div ng-include="'partials/navbar'"></div>
+    <div class="main">
+        <div class="chat">
+            <section auto-scroll="event:scroll">
+                <ul>
+                    <li ng-repeat="message in getMessages()">
+                        <div class="row">
+                            <img class="author-profile" ng-src="{{ message.author.profileImg }}">
+                            <div class="message">
+                                <div class="row">
+                                    <div class="author" ng-class="{'me':currentUser.name == message.author.name}"
+                                         ng-bind="message.author.name"></div>
+                                    <div class="date">{{ message.date | date: 'h:mm' }}</div>
+                                </div>
+
+                                <ng-embed class="body" embed-data="message.body" embed-options="options"></ng-embed>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </section>
+            <footer>
+                <form class="message-form" ng-submit="sendMessage()">
+                    <input class="new-message" placeholder="Type your message here..." ng-model="newMessage"
+                           ng-trim="false" autofocus>
+                    <div class="btn send" ng-click="sendMessage()">send</div>
+
+                </form>
+            </footer>
+        </div>
+        <aside>
+            <p class="user-show"><i ng-bind="getVisitors().length"></i> <span class="glyphicon glyphicon-user"> </span>
+            </p>
+
+            <ul>
+                <li ng-repeat="visitor in getVisitors()">
+                    <img class="author-profile" ng-src="{{ visitor.profileImg }}">
+                    <div class="name" ng-class="{'me':currentUser.name == visitor.name}">{{ visitor.name }}</div>
+                </li>
+            </ul>
+        </aside>
+    </div>
+</section>
