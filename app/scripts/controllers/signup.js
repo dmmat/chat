@@ -13,6 +13,7 @@ angular.module('chatApp')
           name: $scope.user.name,
           email: $scope.user.email,
           password: $scope.user.password,
+          profileImg: "http://www.gravatar.com/avatar/" + md5($scope.user.email.toLowerCase()) + "?s=200&d=identicon"
         })
         .then( function() {
           // Reconnect to socket as logged in user
