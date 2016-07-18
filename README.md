@@ -2,7 +2,7 @@
 
 ## Setup
 
-Run `npm install`,`npm i -g bower`,`npm i -g grunt grunt-cli`, followed by `bower install` (4, 1, - answers) to grab the dependencies.
+Run `npm install`,`npm i -g bower`,`4`, followed by `bower install` (4, 1, - answers) to grab the dependencies.
 
 `gem install compass`
 
@@ -32,3 +32,6 @@ MIT
 
 ### fom me (start mongodb)
 sudo mongod
+
+## run unit tests 
+grunt test
