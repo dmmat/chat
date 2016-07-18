@@ -5,7 +5,9 @@
 Run `npm install`,`npm i -g bower`,`4`, followed by `bower install` (4, 1, - answers) to grab the dependencies.
 
 `gem install compass`
+> if doesn't have ruby run `sudo apt-get install ruby-dev`
 
+ ---
 ### mongodb install ubuntu 14.04
 
 `sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10`
