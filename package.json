@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "connect-mongo": "~0.4.0",
-    "ejs": "~0.8.4",
+    "ejs": "~2.5.5",
     "express": "~3.4.3",
     "lodash": "~2.4.1",
     "mongoose": "~3.5.5",
