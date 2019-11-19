@@ -6,7 +6,7 @@
     "ejs": "~2.5.5",
     "express": ">=3.11.0",
     "lodash": ">=4.17.5",
-    "mongoose": "~3.5.5",
+    "mongoose": "~5.7.11",
     "passport": "latest",
     "passport-local": "latest",
     "passport.socketio": "~2.2.1",
